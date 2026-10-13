@@ -1,0 +1,20 @@
+Use case: ads-marketing
+Create a polished Chinese editorial cover poster for a guide about mainland Chinese visitors opening personal bank accounts in Hong Kong. One finished flat poster, portrait 3:4, ideally 1536x2048. This is a cover, not an infographic or a bank advertisement.
+
+Style: sophisticated colorblock editorial design, strong typographic hierarchy, large geometric flat areas, Chinese Song/Ming serif headlines with pronounced thick vertical and fine horizontal strokes. Crisp print-like edges, very subtle paper texture. Not calligraphy, not handwritten, no 3D mockup.
+
+Palette: saturated burnt orange #EF783B, deep teal #124C49, warm cream #FFF2D9, small muted mint #B8D5BF accents. Use cream on teal for legible small type. Strong, composed, magazine quality.
+
+Composition: confident asymmetric editorial layout. Top 55–60% dominated by exceptionally large, beautifully typeset Chinese headline in cream on orange, left aligned with expressive natural line breaks. A deep teal geometric field occupies lower portion and extends up the right side. In that field, a refined flat illustration of Hong Kong Central skyline including recognizable angular Bank of China Tower and surrounding waterfront buildings, using cream and mint shapes; schematic city illustration, not claimed to be a photograph. Integrate two overlapping plain bank-card silhouettes subtly into the lower city geometry, no invented numbers, logos, brand markings or payments-network emblems. Keep the skyline as the single thematic illustration, not a collage of little icons. Maintain comfortable negative space and 5–7% text safe margins.
+
+Text exactly in simplified Chinese:
+Small top kicker: "内地居民赴港"
+Main headline in three lines:
+"去香港"
+"哪些银行"
+"可以开户？"
+Secondary line in clean, legible type: "汇丰 · 中银香港 · 恒生"
+Bottom small but readable note: "开户条件以银行审核为准"
+
+Only these texts. Main headline must be the unmistakable focal point and dominate at thumbnail size. Make "去香港" particularly expressive and large, with no overlap or clipped strokes. The three bank names are one quiet supporting line, not three fake credit-card brands. Bottom note is visually subordinate but fully legible.
+No invented fees, guarantees, time-to-open, offers, QR codes, card numbers, watermarks, dates, signatures or extra text. Do not include charts, long body copy or UI. Deliver a complete bleed-to-edge image.

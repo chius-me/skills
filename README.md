@@ -1,2 +1,0 @@
-# skills
-Chius 's Skills

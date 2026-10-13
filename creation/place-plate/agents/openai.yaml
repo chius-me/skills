@@ -1,0 +1,4 @@
+interface:
+  display_name: "地理照片标注 · Place Plate"
+  short_description: "保留原照片，用清晰地名、少量细白描线和定位引线制作克制的地理杂志式标注"
+  default_prompt: "用 $place-plate 给这张照片添加克制的地理杂志式标注，先识别主体和留白，再添加清晰地名与少量必要描线。"

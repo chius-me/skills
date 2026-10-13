@@ -1,0 +1,4 @@
+interface:
+  display_name: "色块编辑设计 · Colorblock Editorial"
+  short_description: "用大色块、衬线标题与照片或插画制作封面、海报、信息卡和系列图文"
+  default_prompt: "用 $colorblock-editorial，把我的内容和素材整理成层级清晰的色块编辑设计，配色和画幅按用途选择。"
