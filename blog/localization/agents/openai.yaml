@@ -1,0 +1,4 @@
+interface:
+  display_name: "博客校对与多语本地化 · Blog Localization"
+  short_description: "校对中文技术与随笔博客，并本地化为台湾正体中文与地道美式英语"
+  default_prompt: "用 $blog-localization 先校对中文原稿的排版、标点与专有名词，再以中文为准同步台湾正体与美式英语版本，保持个人随笔语气，拒绝机翻。"
