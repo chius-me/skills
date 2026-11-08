@@ -1,0 +1,4 @@
+interface:
+  display_name: "个人博客写作与项目沉淀"
+  short_description: "保留个人语气润色博客，从项目代码与真实记录提炼有取舍、有细节的文章"
+  default_prompt: "用 $blog-writing 润色这篇博客，或把提供的项目整理成中文博客文章；保留我的语气，写清问题、取舍和结果，不虚构经历。"
