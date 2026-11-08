@@ -1,0 +1,4 @@
+interface:
+  display_name: "开源项目 README 规范 · README Spec"
+  short_description: "按 chius-me 标准规范化与撰写公开项目 README"
+  default_prompt: "用 $readme-spec 按照 chius-me 开源项目标准，为公开项目构建或重塑结构优雅、含居中 Hero Header、规范徽标与双语导航的专业 README。"
