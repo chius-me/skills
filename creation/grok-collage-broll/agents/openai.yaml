@@ -1,0 +1,6 @@
+interface:
+  display_name: "纸拼贴垫镜 · Grok Collage B-roll"
+  short_description: "短口播转 9:16 半调纸拼贴无声 B-roll 组装动画"
+  default_prompt: "用 $grok-collage-broll，把这段口播做成 9:16 半调纸拼贴无声 B-roll 组装动画。"
+policy:
+  allow_implicit_invocation: true

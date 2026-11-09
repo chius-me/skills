@@ -1,0 +1,6 @@
+interface:
+  display_name: "纸拼贴垫镜"
+  short_description: "先锁隐喻与静帧，再用 reference_to_video 空场拼到完成态"
+  default_prompt: "Use $grok-collage-broll。把这段短口播做成 9:16 半调纸拼贴无声 B-roll。两次停：只谈隐喻 → 只出 image_gen 静帧；通过后默认 reference_to_video(空场, 确认静帧)，产物进工作区 .hyperframes-projects/。禁止默认空场 image_to_video，禁止 Gemini/Omni/Veo。"
+policy:
+  allow_implicit_invocation: true

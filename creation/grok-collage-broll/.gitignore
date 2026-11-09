@@ -1,0 +1,6 @@
+__pycache__/
+.DS_Store
+# Local Grok discovery install (source of truth is repo root SKILL.md + scripts/)
+.grok/
+# Skill run outputs (stills, videos, QA) — always under workspace
+.hyperframes-projects/

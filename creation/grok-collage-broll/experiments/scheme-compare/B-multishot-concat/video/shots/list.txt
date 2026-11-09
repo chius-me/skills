@@ -1,0 +1,3 @@
+file '/Users/chius/repo/github/gbro-collage-broll/experiments/scheme-compare/B-multishot-concat/video/shots/s1-n.mp4'
+file '/Users/chius/repo/github/gbro-collage-broll/experiments/scheme-compare/B-multishot-concat/video/shots/s2-n.mp4'
+file '/Users/chius/repo/github/gbro-collage-broll/experiments/scheme-compare/B-multishot-concat/video/shots/s3-n.mp4'
