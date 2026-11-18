@@ -16,9 +16,9 @@
 
 | File | Role |
 |------|------|
-| `frames/approved-still.png` / `last-frame.png` | Gate-2 still (shared) |
-| `frames/first-frame.png` | solid purple empty |
-| `video/final-noaudio.mp4` | delivery |
+| `../shared/approved-still.png` | Gate-2 still (shared) |
+| `../shared/first-frame.png` | solid purple empty (shared) |
+| `../../../assets/demo-a-empty-i2v.mp4` | canonical silent delivery (deduplicated) |
 | `video/contact-sheet.jpg` | 1fps × 6 |
 | `video/end-frame-comparison.jpg` | still \| video-last |
 

@@ -17,9 +17,8 @@
 
 | File | Role |
 |------|------|
-| `frames/mid-01.png` … `mid-03.png` | intermediate stills |
-| `video/shots/s1.mp4` … `s3.mp4` | per-shot clips |
-| `video/final-noaudio.mp4` | concatenated delivery |
+| `../shared/approved-still.png` | Gate-2 final still (shared) |
+| `../../../assets/demo-b-multishot.mp4` | concatenated silent delivery (deduplicated; intermediate shots pruned from repo) |
 | `video/contact-sheet.jpg` | process overview |
 | `video/end-frame-comparison.jpg` | still \| video-last |
 

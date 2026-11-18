@@ -7,6 +7,7 @@ that geometry. Input coordinates refer to the EXIF-oriented photograph.
 from __future__ import annotations
 
 import argparse
+from functools import lru_cache
 import json
 import math
 import sys
@@ -72,7 +73,8 @@ def require_keys(obj, allowed: set[str], name: str, errors: list[str]) -> None:
 
 def has_cjk(text: str) -> bool:
     for c in text:
-        if "\u3040" <= c <= "\u30ff" or "\u4e00" <= c <= "\u9fff" or "\uac00" <= c <= "\ud7af":
+        if ("\u3040" <= c <= "\u30ff" or "\u3400" <= c <= "\u4dbf"
+                or "\u4e00" <= c <= "\u9fff" or "\uac00" <= c <= "\ud7af"):
             return True
     return False
 
@@ -198,12 +200,20 @@ def check_points(points, name: str, errors: list[str]) -> None:
 def find_font(cjk=False, override=None):
     candidates = [override] if override else (
         ["/System/Library/Fonts/PingFang.ttc",
+         "/System/Library/Fonts/Hiragino Sans GB.ttc",
          "/System/Library/Fonts/STHeiti Light.ttc",
          "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
-         "C:/Windows/Fonts/msyh.ttc"] if cjk else
+         "/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc",
+         "/usr/share/fonts/truetype/noto/NotoSansCJK-Regular.ttc",
+         "/usr/share/fonts/opentype/noto/NotoSansCJKsc-Regular.otf",
+         "/usr/share/fonts/truetype/wqy/wqy-zenhei.ttc",
+         "C:/Windows/Fonts/msyh.ttc",
+         "C:/Windows/Fonts/simhei.ttf"] if cjk else
         ["/System/Library/Fonts/Helvetica.ttc",
          "/System/Library/Fonts/Supplemental/Arial.ttf",
          "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
+         "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf",
+         "/usr/share/fonts/TTF/DejaVuSans.ttf",
          "C:/Windows/Fonts/arial.ttf"]
     )
     for candidate in candidates:
@@ -212,12 +222,17 @@ def find_font(cjk=False, override=None):
     die("No suitable font found; pass --font /path/to/font.ttf (with CJK glyphs for Chinese).")
 
 
+@lru_cache(maxsize=64)
+def load_font(font_path: str, size: int) -> ImageFont.FreeTypeFont:
+    return ImageFont.truetype(font_path, size)
+
+
 def text_layout(label, width, height, font_path):
     role = label.get("role", "place")
     params = ROLES[role]
     scale = width / REF_W
     size = max(10, round(params["size"] * scale))
-    font = ImageFont.truetype(font_path, size)
+    font = load_font(font_path, size)
     text = label["text"] if role == "caption" else label["text"].upper()
     tracking = (0.08 if has_cjk(text) else params["track"]) * size
     lines = text.splitlines()
@@ -360,7 +375,7 @@ def render(spec, base, font_override=None):
             wing = (tip[0]-math.sin(angle+delta)*9*scale,
                     tip[1]+math.cos(angle+delta)*9*scale)
             stroke(draw,[tip,wing],scale)
-        font = ImageFont.truetype(find_font(False,font_override), max(10,round(18*scale)))
+        font = load_font(find_font(False, font_override), max(10, round(18*scale)))
         draw.text((cx+math.sin(angle)*38*scale,cy-math.cos(angle)*38*scale),
                   "N",font=font,anchor="mm",fill=WHITE)
     return Image.alpha_composite(base.convert("RGBA"),overlay).convert("RGB"), issues
@@ -405,12 +420,12 @@ def main():
     if issues and args.strict:
         die("Adjust spec before exporting (--strict).")
     out.parent.mkdir(parents=True,exist_ok=True)
-    result.save(out,icc_profile=profile)
+    result.save(out,icc_profile=profile,optimize=True)
     if args.preview:
         args.preview.parent.mkdir(parents=True,exist_ok=True)
         preview = result.copy()
         preview.thumbnail((1080,round(1080*result.height/result.width)),Image.Resampling.LANCZOS)
-        preview.save(args.preview,icc_profile=profile)
+        preview.save(args.preview,icc_profile=profile,optimize=True)
     print(f"Wrote {out} ({result.width}x{result.height}); {len(issues)} layout warnings")
 
 

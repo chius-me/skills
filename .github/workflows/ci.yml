@@ -1,0 +1,34 @@
+name: Validate Skills
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install runtime dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python3 -m pip install --upgrade pillow
+
+      - name: Validate skill metadata and links
+        run: python3 scripts/validate_repo.py
+
+      - name: Run place-plate tests
+        run: python3 -m unittest discover -s creation/place-plate/scripts -p 'test_*.py'
+
+      - name: Run grok-collage-broll verification
+        run: |
+          bash creation/grok-collage-broll/scripts/verify_skill.sh
+          bash creation/grok-collage-broll/scripts/check_experiments.sh

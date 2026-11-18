@@ -1,6 +1,10 @@
 ---
 name: place-plate
-description: 给地标、建筑或风景照片添加克制的地理杂志式标注：清晰地名、少量细白描线与定位引线。适用于照片地名标注、地标描线和地图感摄影排版，保留原照片，不把照片重绘为海报。
+description: >-
+  给地标、建筑或风景照片添加克制的地理杂志式标注：清晰地名、少量细白描线与定位引线。
+  适用于照片地名标注、地标描线和地图感摄影排版，保留原照片，不把照片重绘为海报。
+  Use when annotating landmark, architecture, or landscape photos with restrained
+  place labels, clean leader lines, and subtle outlines without altering the photo.
 ---
 
 # 地理照片标注

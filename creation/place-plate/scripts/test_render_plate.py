@@ -95,6 +95,15 @@ class RenderTests(unittest.TestCase):
         folder = Path(renderer.__file__).resolve().parents[1]/"example"/"grand-lisboa"
         self.assertEqual(renderer.validate(json.loads((folder/"spec.json").read_text())), [])
 
+    def test_has_cjk_and_font_cache(self):
+        self.assertTrue(renderer.has_cjk("澳门"))
+        self.assertTrue(renderer.has_cjk("㐀"))
+        self.assertFalse(renderer.has_cjk("Grand Lisboa 123"))
+        font_path = renderer.find_font()
+        self.assertIs(renderer.load_font(font_path, 24), renderer.load_font(font_path, 24))
+        with self.assertRaises(SystemExit):
+            renderer.find_font(override="/nonexistent/font.ttf")
+
 
 if __name__ == "__main__":
     unittest.main()

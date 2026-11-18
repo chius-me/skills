@@ -1,0 +1,15 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.swp
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# Local skill runtime / outputs
+.grok/
+.hyperframes-projects/
+place-plates/

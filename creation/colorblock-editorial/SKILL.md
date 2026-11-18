@@ -1,6 +1,10 @@
 ---
 name: colorblock-editorial
-description: 用大色块、衬线标题与照片或插画制作编辑式视觉设计。适用于色块风格的封面、海报、信息卡和系列图文，以及已有作品的局部改版。
+description: >-
+  用大色块、衬线标题与照片或插画制作编辑式视觉设计。适用于色块风格的封面、
+  海报、信息卡和系列图文，以及已有作品的局部改版。
+  Use when designing or revising colorblock editorial covers, posters, social cards,
+  or multi-page visual series with bold color fields and strong typographic hierarchy.
 ---
 
 # 色块编辑设计
@@ -60,3 +64,7 @@ description: 用大色块、衬线标题与照片或插画制作编辑式视觉�
 - 对照内容参考检查主体，避免把生成的标签或细节当作事实来源；有时效的信息保留必要条件与核对日期，不虚构亲历。
 - 读取输出文件的实际宽高，检查裁切和比例，不从提示词推断尺寸或拉伸成品。
 - 按阅读顺序交付成品，局部修改注明替换页；仅按需附文案、提示词或可编辑源文件，说明未解决的问题。
+
+## 当前示例
+
+[香港银行开户封面成品](example/hong-kong-banking-cover.png) · [对应提示词示例](example/hong-kong-banking-cover-prompt.txt)（仅作构图与提示词颗粒度参考，不可复制示例主题文字）。

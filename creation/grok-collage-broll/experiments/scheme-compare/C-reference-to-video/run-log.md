@@ -13,7 +13,7 @@
 
 | File | Role |
 |------|------|
-| `video/final-noaudio.mp4` | delivery |
+| `../../../assets/demo-c-reference.mp4` | canonical silent delivery (deduplicated) |
 | `video/contact-sheet.jpg` | 1fps × 6 |
 | `video/end-frame-comparison.jpg` | still \| video-last |
 | `video/video-first-frame.jpg` | empty-field check |

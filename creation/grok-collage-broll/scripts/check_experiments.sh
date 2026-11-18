@@ -12,6 +12,16 @@ PASS=0
 pass() { printf 'ok  %s\n' "$1"; PASS=$((PASS + 1)); }
 fail() { printf 'not ok  %s\n' "$1"; FAIL=$((FAIL + 1)); }
 
+scheme_asset_video() {
+  case "$1" in
+    A-empty-first-i2v) echo "$ROOT/assets/demo-a-empty-i2v.mp4" ;;
+    B-multishot-concat) echo "$ROOT/assets/demo-b-multishot.mp4" ;;
+    C-reference-to-video) echo "$ROOT/assets/demo-c-reference.mp4" ;;
+    D-final-still-i2v) echo "$ROOT/assets/demo-d-hold.mp4" ;;
+    *) echo "" ;;
+  esac
+}
+
 echo "# check_experiments"
 echo "# EXP=$EXP"
 
@@ -42,7 +52,6 @@ if [ -f "$EXP/QUALITY_REPORT.md" ]; then
   else
     fail "report has no recommended default"
   fi
-
 else
   fail "QUALITY_REPORT.md missing"
 fi
@@ -56,18 +65,20 @@ for S in "${SCHEMES[@]}"; do
     fail "scheme dir missing: $S"
     continue
   fi
-  # still
+  # still (local or canonical shared still)
   if ls "$D"/frames/*still* "$D"/frames/last-frame.png "$D"/frames/approved-still.png 2>/dev/null | head -1 | grep -q .; then
     pass "$S has still"
-  elif [ -f "$D/frames/last-frame.png" ]; then
-    pass "$S has still (last-frame)"
+  elif [ -f "$EXP/shared/approved-still.png" ]; then
+    pass "$S references shared approved still"
   else
     fail "$S missing still image"
   fi
-  # silent video
+  # silent video (local or canonical asset video)
   VID=""
+  ASSET_VID="$(scheme_asset_video "$S")"
   if [ -f "$D/video/final-noaudio.mp4" ]; then VID="$D/video/final-noaudio.mp4"
   elif [ -f "$D/video/final.mp4" ]; then VID="$D/video/final.mp4"
+  elif [ -n "$ASSET_VID" ] && [ -f "$ASSET_VID" ]; then VID="$ASSET_VID"
   fi
   if [ -n "$VID" ]; then
     pass "$S has video"
@@ -83,9 +94,8 @@ for S in "${SCHEMES[@]}"; do
       if [ -z "$HAS_A" ]; then
         pass "$S no audio stream"
       else
-        # prefer silent; soft fail if audio present on final.mp4 only
-        if echo "$VID" | grep -q noaudio; then
-          fail "$S final-noaudio still has audio"
+        if echo "$VID" | grep -qE 'noaudio|assets/demo-'; then
+          fail "$S canonical silent video still has audio"
         else
           pass "$S has audio on non-stripped file (ok if strip exists separately)"
         fi

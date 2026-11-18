@@ -20,6 +20,6 @@ if ! command -v ffmpeg >/dev/null 2>&1; then
 fi
 
 ffmpeg -y -i "$IN" \
-  -vf "fps=1,scale=270:480,tile=${COLS}x1" \
+  -vf "fps=1,scale=270:480:force_original_aspect_ratio=decrease,pad=270:480:(ow-iw)/2:(oh-ih)/2,tile=${COLS}x1" \
   -frames:v 1 "$OUT" >/dev/null 2>&1
 echo "Wrote $OUT"
