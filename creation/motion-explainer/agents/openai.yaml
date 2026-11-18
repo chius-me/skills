@@ -1,4 +1,4 @@
 interface:
   display_name: "动态图解科普 · Motion Explainer"
-  short_description: "用字幕和音乐主导中文科普片，让画面讲清机制与规模，支持脚本、样片和成片"
+  short_description: "用明亮瑞士网格、短字幕与轻盈律动讲清机制和规模，支持脚本、样片和成片"
   default_prompt: "用 $motion-explainer 做一条字幕与音乐主导的中文科普片，先给我有出处的内容主线、开头几屏字幕和对应的画面动作。"
