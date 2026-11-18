@@ -1,0 +1,4 @@
+interface:
+  display_name: "科技评测动效"
+  short_description: "用网页和产品演示、细节卡片、同题双栏与数据动效制作科技评测视频"
+  default_prompt: "用 $benchmark-showcase 把这两段同题演示做成 12 秒横屏对照样片，先展示主测细节，再左右并排。"
