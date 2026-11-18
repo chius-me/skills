@@ -6,7 +6,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 [![CI](https://github.com/chius-me/skills/actions/workflows/ci.yml/badge.svg)](https://github.com/chius-me/skills/actions/workflows/ci.yml)
-![Skills](https://img.shields.io/badge/Skills-7-2ea44f?style=flat)
+![Skills](https://img.shields.io/badge/Skills-8-2ea44f?style=flat)
 
 [技能目录](#技能目录) · [安装方式](#安装方式) · [本地校验](#本地校验)
 
@@ -33,6 +33,7 @@
 | 技能 | 路径 | 说明 | 适用范围 / 依赖 |
 | --- | --- | --- | --- |
 | `swiss-style` | [`design/swiss-style`](design/swiss-style) | 纸感等宽瑞士网格网页设计系统，内置 `chius.me` 与 `chius.cc`（Chipaper）参考预设 | 通用纸感等宽网格 / Chius 品牌站 |
+| `motion-explainer` | [`creation/motion-explainer`](creation/motion-explainer) | 按 Chius 的编导偏好，从选题调查和中文脚本到可审的动态图解样片与成片 | 写稿无工具依赖，渲染沿用项目工具，抽帧需 Python 3 与 FFmpeg |
 | `grok-collage-broll` | [`creation/grok-collage-broll`](creation/grok-collage-broll) | 5–6 秒短口播转 9:16 半调纸拼贴无声 B-roll，含三阶段审批闸门与路径对照实验 | Grok Build（`image_gen` / `reference_to_video`）+ `ffmpeg` |
 
 ---
