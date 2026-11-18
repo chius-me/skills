@@ -33,7 +33,7 @@
 
 | 技能 | 路径 | 说明 | 适用范围 / 依赖 |
 | --- | --- | --- | --- |
-| `swiss-style` | [`design/swiss-style`](design/swiss-style) | 纸感等宽瑞士网格网页设计系统，内置 `chius.me` 与 `chius.cc`（Chipaper）参考预设 | 通用纸感等宽网格 / Chius 品牌站 |
+| `swiss-style` | [`design/swiss-style`](design/swiss-style) | 纸感等宽瑞士网格网页设计与评审规范，含反模板避坑、无障碍门禁及 `chius.me` / `chius.cc`（Chipaper）预设 | 通用纸感等宽网格 / Chius 品牌站 |
 | `motion-explainer` | [`creation/motion-explainer`](creation/motion-explainer) | 按 Chius 的编导偏好，从选题调查和中文脚本到可审的动态图解样片与成片 | 写稿无工具依赖，渲染沿用项目工具，抽帧需 Python 3 与 FFmpeg |
 | `grok-collage-broll` | [`creation/grok-collage-broll`](creation/grok-collage-broll) | 5–6 秒短口播转 9:16 半调纸拼贴无声 B-roll，含三阶段审批闸门与路径对照实验 | Grok Build（`image_gen` / `reference_to_video`）+ `ffmpeg` |
 

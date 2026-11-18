@@ -1,4 +1,4 @@
 interface:
   display_name: "纸感等宽瑞士网格 · Swiss Style"
-  short_description: "以暖纸/蓝灰双配色、等宽字体、单栏网格与细线设计个人主页与博客（含 Chius / Chipaper 预设）"
-  default_prompt: "用 $swiss-style 把我的内容组织成纸感等宽瑞士网格网页，按用途选择链接页或阅读页布局，无自定义品牌色时使用参考预设。"
+  short_description: "以暖纸/蓝灰双配色、等宽中英排版、单栏主轴与反模板纪律设计或评审网页（含 Chius / Chipaper 预设）"
+  default_prompt: "用 $swiss-style 设计、实现或评审页面：先给出主轴、语义 Token 与去模板化方案，再按用途选用链接页、索引页或阅读页骨架落地并核验双主题与多视口。"
