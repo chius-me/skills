@@ -6,7 +6,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 [![CI](https://github.com/chius-me/skills/actions/workflows/ci.yml/badge.svg)](https://github.com/chius-me/skills/actions/workflows/ci.yml)
-![Skills](https://img.shields.io/badge/Skills-10-2ea44f?style=flat)
+![Skills](https://img.shields.io/badge/Skills-11-2ea44f?style=flat)
 
 [技能目录](#技能目录) · [安装方式](#安装方式) · [本地校验](#本地校验)
 
@@ -27,7 +27,7 @@
 | `colorblock-editorial` | [`creation/colorblock-editorial`](creation/colorblock-editorial) | 大色块、衬线标题与单主体的杂志编辑风封面、海报及系列图文设计 | 图像生成或排版工具 |
 | `benchmark-showcase` | [`creation/benchmark-showcase`](creation/benchmark-showcase) | 大窗演示、细节卡片、同题双栏和榜单动效，用于模型横评及产品对比视频 | 分镜无工具依赖，渲染沿用项目工具 |
 | `place-plate` | [`creation/place-plate`](creation/place-plate) | 保留原照片，基于真实字体度量渲染地名、细白描线、引线与区位简图 | Python 3 + Pillow |
-| `city-picturebook` | [`design/city-picturebook`](design/city-picturebook) | 四色平涂、手绘墨线与绘本式图文排版，用于品牌界面、导览、海报及编辑设计 | 无固定工具依赖 |
+| `city` | [`design/city`](design/city) | 《CITY THE ANIMATION》通用设计理念：四色赛璐珞平涂、手绘墨线、圆厚字标与日常群像叙事，用于海报、封面、导览与短片 | 无固定工具依赖 |
 | `readme-spec` | [`dev/readme-spec`](dev/readme-spec) | 标准化开源项目 README（30 秒法则、Hero 头部、Badges 与可复现命令；附可选 `chius-me` 预设） | 无 |
 
 ### 品牌预设与特定运行时技能（Brand Presets & Runtime-Specific）
@@ -35,6 +35,7 @@
 | 技能 | 路径 | 说明 | 适用范围 / 依赖 |
 | --- | --- | --- | --- |
 | `swiss-style` | [`design/swiss-style`](design/swiss-style) | 纸感等宽瑞士网格网页设计与评审规范，含反模板避坑、无障碍门禁及 `chius.me` / `chius.cc`（Chipaper）预设 | 通用纸感等宽网格 / Chius 品牌站 |
+| `city-web` | [`design/city-web`](design/city-web) | 《CITY THE ANIMATION》系列网站设计规范：统一四色 Token、共享 `city-shell` 顶栏菜单、双页面原型及 `*.city.chius.dev` 与 GitHub 互链 | CITY 系列互动站与衍生 Web 应用 |
 | `motion-explainer` | [`creation/motion-explainer`](creation/motion-explainer) | 按 Chius 的编导偏好，从选题调查和中文脚本到可审的动态图解样片与成片 | 写稿无工具依赖，渲染沿用项目工具，抽帧需 Python 3 与 FFmpeg |
 | `grok-collage-broll` | [`creation/grok-collage-broll`](creation/grok-collage-broll) | 5–6 秒短口播转 9:16 半调纸拼贴无声 B-roll，含三阶段审批闸门与路径对照实验 | Grok Build（`image_gen` / `reference_to_video`）+ `ffmpeg` |
 

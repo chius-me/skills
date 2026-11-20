@@ -1,0 +1,4 @@
+interface:
+  display_name: "CITY 通用设计理念"
+  short_description: "以四色赛璐珞平涂、手绘墨线、圆厚字标与日常群像叙事设计海报、封面、导览、动态短片与版式"
+  default_prompt: "用 $city 视觉设计理念为新企划设计海报、视频封面与核心版式，规划白纸墨骨、C-I-T-Y 四色节拍与跨载体一致性。"

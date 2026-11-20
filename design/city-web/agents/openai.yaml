@@ -1,0 +1,4 @@
+interface:
+  display_name: "CITY 网站设计规范 · City Web"
+  short_description: "为《CITY THE ANIMATION》相关网站提供统一视觉 Token、共享顶栏与菜单壳层、三语切换及生态互链规范"
+  default_prompt: "用 $city-web 规范设计与实现一个新的 CITY 动画衍生网站，复用共享 city-shell 顶栏与全屏菜单、对齐 Token 与页面原型，并完成与 sister sites 及 GitHub 仓库的双向互链。"

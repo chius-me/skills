@@ -1,4 +1,0 @@
-interface:
-  display_name: "四色绘本设计语言"
-  short_description: "用四色平涂、手绘墨线与清晰的图文层级设计界面、海报和编辑版式"
-  default_prompt: "用 $city-picturebook 为一家社区修理铺设计预约界面和店内价目表，让两种载体共享字形、配色与插画风格。"
