@@ -31,7 +31,7 @@
 | `--z-topbar-brand` | `45` | `.city-topbar-brand`（左上角 `CityLogo`） | 被菜单遮罩与全屏弹窗自然覆盖 |
 | 站内浮动 HUD | `30–40` | `DetailDrawer` / `BottomControls` / `PathFinderBar` | 位于桌面视口中下方，留出 `top >= 72px` 不碰顶栏 |
 | `--z-menu-overlay` | `65` | `CityMenuOverlay` | 低于 `--z-top-shelf`，让右上角变形 `×` 按钮始终可点关闭 |
-| `--z-top-shelf` | `70` | `.city-top-shelf`（工具栏 + 姊妹站 + GitHub + 语言 + 菜单钮） | 在主视图与全屏菜单态保持可交互 |
+| `--z-top-shelf` | `70` | `.city-top-shelf`（站点工具 + 语言 + 菜单钮） | 在主视图与全屏菜单态保持可交互 |
 | `--z-modal` | `80` | 全屏独立弹窗（如 `DirectoryModal`、`z-[80]`） | 自带独立右上角关闭 `×` 按钮，必须高于 `70` |
 | `--z-lightbox` | `85` | 大图灯箱（如头像放大层、`z-[85]`） | 覆盖弹窗与细节抽屉 |
 | `--z-drawer` | `95` | 滑出侧边抽屉（如 `HistoryDrawer`） | 从右滑入全高遮罩，完全接管屏幕焦点 |
@@ -52,16 +52,14 @@
 
 - **根布局**：正常文档流，`.city-app { min-height: 100vh; display: flex; flex-direction: column; overflow-x: clip; }`，`main` 使用 `.studio-shell`（`max-width: 1080px; margin: 0 auto; padding: 86px 24px 36px;`）。
 - **底纹**：使用 `body::before` `position: fixed` 平铺轻盈彩字纹样（推荐 `opacity: 0.24`，`42s` 慢漂），不干扰主体工作区与阅读。
-- **双栏或索引节拍**：
+- **工作区与留白**：
   - 顶部紧凑引言条（`h1` 主标题紧接 `<CityDots />` ＋ 单句副标，右侧可放圆形参照/状态小胶囊）。
   - 工作区桌面 `grid-template-columns: minmax(320px, 440px) minmax(0, 1fr)`，`gap: 28px`；`<=900px` 收为单栏并将舞台列居中限宽 `480px`。
-  - 底部必须挂载共享 `<CityFooter />`。
+  - 底部必须挂载极简单行声明 `<CityFooter />`（不堆放外链）。
 
-## 四、响应式断点与动效降级
+## 四、响应式断点、菜单尺度与动效降级
 
-- `<= 1024px`（中平板）：`city-shell.css` 自动隐藏 `.city-sister-pill`，避免四按钮站点导航在 iPad 竖屏下挤压左上角品牌药丸。
+- **全屏菜单尺度（`.city-menu-overlay-inner`）**：统一限宽 `max-width: 840px; margin: auto; gap: 24px;`。桌面端居中舒展一屏（`Hero 260px 1fr` + 可选单卡标签资源栏 `.city-menu-tabs-card` 与单行 `.city-menu-kbd-hint` + 居中 `.city-menu-links` 胶囊行 + `.city-menu-footer`）。
 - `<= 900px`（窄平板）：全屏菜单 `.city-menu-hero` 从左文右瓷砖双列改为上下居中单列；工作室双栏改为单栏。
-- `<= 720px`（大屏手机）：菜单内生态站对比网格 `.city-ecosystem-grid` 转为单列。
-- `<= 640px`（常规手机）：左上角 `.city-wordmark` 缩小至 `svg height: 22px`，`.city-top-shelf` 圆角收敛至 `18px`，菜单按钮缩至 `34×34px`，GitHub 圆钮缩至 `30×30px`；站点自定义次要文字标签（如 `galleryBtn` 文案）隐藏仅留图标与数量徽标；`.city-menu-tiles` 转为单列。
-- `<= 359px`（超窄防溢出）：隐藏 `.city-github-btn`（用户仍可在全屏菜单生态卡或页脚点击 GitHub 原仓），彻底保证零横向溢出。
+- `<= 640px`（常规手机）：左上角 `.city-wordmark` 缩小至 `svg height: 22px`，`.city-top-shelf` 圆角收敛至 `18px`，菜单按钮缩至 `34×34px`；站点自定义次要文字标签（如 `galleryBtn` 文案）隐藏仅留图标与数量徽标；`.city-menu-overlay` 切回顶对齐滚动，`.city-menu-tiles` 与 `.city-menu-tabs-grid` 转为单列，隐藏桌面快捷键提示行 `.city-menu-kbd-hint`。
 - `@media (prefers-reduced-motion: reduce)`：立刻停止背景平铺漂移、渐变旋转、颜色循环、`MiminekoMascot` 晃动及点跳动画，`CityLoadingCurtain` 不等待滑出直接跳过。

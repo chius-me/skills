@@ -14,8 +14,8 @@
 ### 注册第 3 个及更多新站的规范步骤
 
 1. 在 `ecosystem.ts` 中扩展 `export type CitySiteId = 'social-map' | 'avatar' | '<new-id>';`，并在 `CITY_SITES` 与 `CITY_SITE_LIST` 中补齐中/英/日三语 `name`、`shortLabel`、`summary`、`url`、`domain`、`repoUrl`、`repoSlug`、`accent`。
-2. 调整 `getSisterSite(siteId)` 或将 `CityTopShell` 顶部胶囊指向最常互跳的姊妹站；而全屏菜单内的 `.city-ecosystem-grid` 会自动遍历 `CITY_SITE_LIST` 展示所有网站及其 GitHub 原仓（当站点达到 3–4 个时自动两列对齐）。
-3. 同步更新所有现有 `city-*` 站点的 `ecosystem.ts`、各站首页导航与 `README.md` / `README.zh.md`，做到双向可发现。
+2. 调整 `getSisterSite(siteId)` 指向主推姊妹站；当站内需要展示 2 个以上姊妹站时，通过 `extraLinks` 在 `.city-menu-links` 补充胶囊即可，保持右上角菜单干净不臃肿。
+3. 同步更新现有 `city-*` 站点的 `ecosystem.ts` 与 `README.md` / `README.zh.md`，做到菜单内与文档双向可发现。
 
 ## 二、`components/city-shell/` 组件契约
 
@@ -25,14 +25,20 @@
 | `CityDots` | `className?: string` | `#F7B647` / `#F09CB4` / `#99CB77` / `#EE847D` 带黑边四色圆点装饰 |
 | `GitHubMark` | `size?: number`, `className?: string` | 内联标准 GitHub Octocat SVG（避免跨版本 `lucide-react` 缺失品牌图标） |
 | `MiminekoMascot` | `className?: string` | 白耳猫（Mimineko）矢量化看板角色，附轻快 `mimineko-bob` 摇曳 |
-| `CityTopShell` | `siteId`, `locale`, `onChangeLocale`, `menuOpen`, `onToggleMenu`, `onBrandClick?`, `brandTitle?`, `children?` | 渲染左上品牌徽章与右上 `.city-top-shelf`；固定内置姊妹站胶囊 + 本站 GitHub 按钮 + 三语切换 + 四色变形菜单钮，`children` 承接本站模式/历史工具按钮 |
-| `CityMenuOverlay` | `siteId`, `open`, `locale`, `tagline`, `tiles: CityMenuTile[]`, `onClose`, `wide?: boolean`, `children?` | 统一 `Escape`/点击遮罩关闭、左上商标与吉祥物、4 枚主题色大瓷砖（支持 `onClick` 或外链 `href`）、可选站内板块 `children`、**生态站双链接卡片网格**、底部快捷胶囊与版权页脚 |
+| `CityTopShell` | `siteId`, `locale`, `onChangeLocale`, `menuOpen`, `onToggleMenu`, `onBrandClick?`, `brandTitle?`, `children?` | 渲染极简左上品牌徽章与右上 `.city-top-shelf`（只放 `children` 工具槽 ＋ 三语切换 ＋ 菜单钮），并随语言切换自动同步 `document.title`（取 `CITY_SITES[siteId].tabTitle`）与 `<html lang>` |
+| `CityMenuOverlay` | `siteId`, `open`, `locale`, `tagline`, `tiles: CityMenuTile[]`, `onClose`, `extraLinks?`, `creditNote?`, `children?` | 统一 `Escape`/点击遮罩关闭、左侧商标与吉祥物、4 枚主题色大瓷砖（支持 `onClick` 或外链 `href`）、可选紧凑插件槽 `children`（推荐最多 1 个 `.city-menu-tabs-card` + 单行 `.city-menu-kbd-hint`）、自动去重的底部胶囊行 `.city-menu-links`（自动高亮姊妹站胶囊并附带 `<GitHubMark /> GitHub ↗`、`Awesome CITY ↗`、`官方官网 ↗`）与极简版权尾注 |
 | `CityLoadingCurtain` / `CityLoadingDots` | `subtitle: string` | 官网天蓝（`#1395ea`）入场遮罩（居中白底黑边卡片 + Mimineko）与四色跳跃加载点 |
-| `CityFooter` | `siteId`, `locale` | 渲染版权声明 · 姊妹站直达 · 本站 `<GitHubMark />` 源码 · `Awesome CITY` · 动画官网 |
+| `CityFooter` | `siteId?: CitySiteId`, `locale` | 渲染干净的单行非官方/版权声明，不在主页面页脚堆积外链 |
 
 ## 三、文档头、Favicon 与 Cloudflare 部署模版
 
-### 1. HTML `<head>`（`index.html`）
+### 1. HTML `<head>`（`index.html`）与标签页标题规范
+
+所有 `*.city.chius.dev` 网站统一标签页标题格式（静态 `<title>` / `og:title` 默认简体中文，切换语言后由 `CityTopShell` 自动同步 `CITY_SITES[siteId].tabTitle` 与 `<html lang>`）：
+
+- **中文**：`CITY <Module> · 《小城日常》<中文模块名>`（例如 `CITY Social Map · 《小城日常》人物关系图`、`CITY Avatar · 《小城日常》风格头像工坊`）
+- **English**：`CITY <Module> · CITY THE ANIMATION`
+- **日本語**：`CITY <Module> · 『CITY THE ANIMATION』<日文模块名>`
 
 统一加载 `M PLUS Rounded 1c`（400/500/700/800/900）＋ `Noto Sans SC`，补齐三端 SEO 与主题色 `#f7b647`：
 
@@ -42,9 +48,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CITY <MODULE> — 《小城日常》CITY THE ANIMATION</title>
+    <title>CITY <Module> · 《小城日常》<中文模块名></title>
     <meta name="description" content="..." />
-    <meta property="og:title" content="..." />
+    <meta property="og:title" content="CITY <Module> · 《小城日常》<中文模块名>" />
     <meta property="og:description" content="..." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://<slug>.city.chius.dev/" />
@@ -60,9 +66,19 @@
   </head>
 ```
 
-### 2. 系列 `public/favicon.svg` 范式
+### 2. 系列统一 `public/favicon.svg`
 
-使用 `64×64` 视图框，围绕四色块（`#F7B647` / `#F09CB4` / `#99CB77` / `#EE847D`）＋ `#141419` 粗墨构建家族识别度（例如 `city-social-map` 为白底四色连点，`city-avatar` 为黑底四色拼格叠白描边字母 `C`）。
+所有 CITY 网站共享同一枚图标（源自 `city-social-map`，白底黑描边 `64×64` 圆角方块＋四枚带黑边 C-I-T-Y 彩色圆点），逐字节保持一致：
+
+```xml
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="3" y="3" width="58" height="58" rx="16" fill="#FFFFFF" stroke="#141419" stroke-width="5"/>
+  <circle cx="21" cy="21" r="10" fill="#F7B647" stroke="#141419" stroke-width="3.2"/>
+  <circle cx="43" cy="21" r="10" fill="#F09CB4" stroke="#141419" stroke-width="3.2"/>
+  <circle cx="21" cy="43" r="10" fill="#99CB77" stroke="#141419" stroke-width="3.2"/>
+  <circle cx="43" cy="43" r="10" fill="#EE847D" stroke="#141419" stroke-width="3.2"/>
+</svg>
+```
 
 ### 3. Cloudflare Workers 路由（`wrangler.jsonc`）
 

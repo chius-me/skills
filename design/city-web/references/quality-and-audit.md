@@ -12,8 +12,9 @@
 | **“盒中套盒”粗墨嵌套** | 大卡片内部的子区块又画 `2.5px` 黑实线配硬投影，页面显得拥挤噪杂 | 内部次级区块用浅灰 `1.5px–2px` 细线（`--color-grey200`）或 `--color-cream` `#faf6ee` 底色 |
 | **抽屉遮挡搜索建议或缩放控件** | 像打开详情卡时底层搜索自动补全被右边抽屉盖住一半 | 右侧抽屉开启后，左下/右下控件自动调整 `right` 偏移让出抽屉宽度，或窄屏隐藏次级控件 |
 | **弹窗 `z-index` 低于右上控制托架（`70`）** | 全屏弹窗自带的右上关闭 `×` 被 `.city-top-shelf` 压在底下点不到 | 遵守阶梯：`CityMenuOverlay` (`65`) < `.city-top-shelf` (`70`) < 全屏弹窗 (`80`) < 灯箱 (`85`) < 侧边抽屉 (`95`) |
-| **缺少 GitHub 原仓或姊妹站直链** | 网站与源代码、系列作品彼此孤岛化 | `CityTopShell` 放 `.city-github-btn` + 桌面 `.city-sister-pill`，`CityMenuOverlay` 渲染完整生态站卡片，`CityFooter` 与双语 README 双向补全 |
-| **手机窄屏顶栏溢出 / 碰撞** | `375px` 或 `640px` 下四tab或双行文本把右上角挤出屏外 | `<=1024px` 隐藏 `.city-sister-pill` 退入全屏菜单；`<=640px` 缩字标 `22px`、隐次要标签、降圆钮尺寸；`<=359px` 隐 `.city-github-btn` 杜绝横向滚动条 |
+| **缺少 GitHub 原仓或姊妹站互链 / 把它们塞满主页面页眉页脚** | 主页页眉页脚堆外链会破坏主工作区简洁度；完全不放又会导致站点与源码孤岛 | **主页与页脚极简**：`CityTopShell` 与 `CityFooter` 不放 GitHub 与外站链接，统一收进右上角 `CityMenuOverlay` 菜单的四色瓷砖与 `.city-menu-links` 胶囊行 |
+| **菜单层纵向堆砌多张大卡（或硬插生态卡片区）** | 展开菜单塞进 4–6 张独立大卡 + 长说明，需来回滚两三屏才能找全入口，显得繁杂拥挤 | 全站对齐 `840px` 舒展结构：最多在四色 Hero 下方放置 1 张 `.city-menu-tabs-card` 标签页切换（每栏 `2×2`）＋ 单行 `.city-menu-kbd-hint`，一屏看清 |
+| **手机窄屏顶栏溢出 / 碰撞** | `375px` 或 `640px` 下四tab或双行文本把右上角挤出屏外 | 顶栏严格精简不放外部胶囊；`<=640px` 缩字标 `22px`、隐次要标签、菜单钮 `34×34px`，杜绝横向滚动条 |
 
 ## 二、五维交付核对单
 
@@ -24,10 +25,10 @@
 - [ ] 没有遗留旧版分散的 `CityLogo.tsx` 或重复菜单/页脚组件；站点 CSS 顶部干净 `@import` 共享 `city-shell.css`。
 - [ ] `tsc -b` 与 `vite build` 严格通过，无类型错误或未使用变量阻塞构建。
 
-### 2. 生态互链与仓库溯源（Critical）
-- [ ] 桌面端顶栏一眼可见 **姊妹站直达胶囊**（`>1024px`）与 **本站 GitHub 原仓图标按钮**（`>=360px`）。
-- [ ] 展开四色变形菜单 `CityMenuOverlay`，可清晰看到所有已登记站点的名称、简介、线上访问链接与 GitHub 仓库链接。
-- [ ] 流式站点底部挂有 `<CityFooter />`，各仓库 `README.md` 与 `README.zh.md` 均互相链接了姐妹站线上域名与 GitHub 仓库。
+### 2. 极简主界面与菜单内互链溯源（Critical）
+- [ ] 主页面顶部 `.city-top-shelf` 与底部 `CityFooter` 保持简洁，不放 GitHub 图标与外部站胶囊。
+- [ ] 展开右上角 `CityMenuOverlay` 时结构舒适不繁杂（`max-width: 840px`，有过多参考入口时使用 `.city-menu-tabs-card` 单卡分页折叠，且在桌面端可一屏浏览主要操作与链接）。
+- [ ] 菜单内（通过主瓷砖或底部 `.city-menu-links` 胶囊行，且无重复项）可一键直达 **姊妹站域名**、**本站 GitHub 原仓库**、`Awesome CITY` 与《CITY THE ANIMATION》官网，各仓库 `README.md` / `README.zh.md` 同步互链。
 
 ### 3. 视口适配与不碰撞 HUD（Critical）
 - [ ] 在桌面 `1440×900`、平板 `768×1024`、常见手机 `390×844`（`375×812`）与窄屏 `320px` 下检查无横向滚动溢出（`scrollWidth <= innerWidth`）。
@@ -41,7 +42,7 @@
 
 ### 5. 动效克制与元数据完整（Medium）
 - [ ] `@media (prefers-reduced-motion: reduce)` 下自动静止飘字背景、旋转边框、Mimineko 摇晃与滑出幕布。
-- [ ] `<title>`、`meta description`、`og:url`、`canonical`、`theme-color="#f7b647"` 与家族 `favicon.svg` 配置准确。
+- [ ] 标签页 `<title>` / `og:title` 符合系列统一格式（`CITY <Module> · 《小城日常》<中文模块名>` 并由 `CityTopShell` 随语言切换更新 `document.title`），全系共享统一的四色圆点 `public/favicon.svg`，`meta description`、`canonical` 与 `theme-color="#f7b647"` 完整。
 
 ## 三、页面评审输出模板
 
