@@ -6,7 +6,7 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 [![CI](https://github.com/chius-me/skills/actions/workflows/ci.yml/badge.svg)](https://github.com/chius-me/skills/actions/workflows/ci.yml)
-![Skills](https://img.shields.io/badge/Skills-9-2ea44f?style=flat)
+![Skills](https://img.shields.io/badge/Skills-10-2ea44f?style=flat)
 
 [技能目录](#技能目录) · [安装方式](#安装方式) · [本地校验](#本地校验)
 
@@ -27,6 +27,7 @@
 | `colorblock-editorial` | [`creation/colorblock-editorial`](creation/colorblock-editorial) | 大色块、衬线标题与单主体的杂志编辑风封面、海报及系列图文设计 | 图像生成或排版工具 |
 | `benchmark-showcase` | [`creation/benchmark-showcase`](creation/benchmark-showcase) | 大窗演示、细节卡片、同题双栏和榜单动效，用于模型横评及产品对比视频 | 分镜无工具依赖，渲染沿用项目工具 |
 | `place-plate` | [`creation/place-plate`](creation/place-plate) | 保留原照片，基于真实字体度量渲染地名、细白描线、引线与区位简图 | Python 3 + Pillow |
+| `city-picturebook` | [`design/city-picturebook`](design/city-picturebook) | 四色平涂、手绘墨线与绘本式图文排版，用于品牌界面、导览、海报及编辑设计 | 无固定工具依赖 |
 | `readme-spec` | [`dev/readme-spec`](dev/readme-spec) | 标准化开源项目 README（30 秒法则、Hero 头部、Badges 与可复现命令；附可选 `chius-me` 预设） | 无 |
 
 ### 品牌预设与特定运行时技能（Brand Presets & Runtime-Specific）
