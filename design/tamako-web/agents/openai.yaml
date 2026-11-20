@@ -1,0 +1,4 @@
+interface:
+  display_name: "玉子市场网页设计规范 · Tamako Web"
+  short_description: "基于《玉子市场》官网逆向提炼的暖纸豆沙 Token、丸体排版、拱廊导航、糯米圆角岛与无障碍网页设计系统"
+  default_prompt: "用 $tamako-web 规范设计或改版一个玉子市场（Tamako Market）风格的网站页面，对齐糯米暖纸与豆沙棕红 Token、丸体字阶、拱廊/糯米岛版式原型及响应式无障碍门禁。"
