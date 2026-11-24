@@ -1,0 +1,4 @@
+interface:
+  display_name: "Docker Compose 项目维护"
+  short_description: "维护 /opt 下的 Compose 项目，检查和更新服务镜像，清理闲置资源"
+  default_prompt: "用 $docker-deploy 检查目标主机 /opt 下哪些运行中的 Compose 服务有镜像更新。"
