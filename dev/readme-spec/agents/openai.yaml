@@ -1,4 +1,4 @@
 interface:
   display_name: "开源项目 README 规范 · README Spec"
-  short_description: "撰写与规范化开源项目 README（含 Hero 头部、徽标、快速开始与双语导航），可选 chius-n 预设"
-  default_prompt: "用 $readme-spec 结合仓库实际代码与配置，撰写或重塑结构清晰、命令可复现且含 Hero 头部与规范徽标的开源项目 README（若属 chius-n 仓库可套用个人预设）。"
+  short_description: "撰写与规范化开源项目 README（含 Hero 头部、徽标、快速开始与双语导航），可选 chius-cc 预设"
+  default_prompt: "用 $readme-spec 结合仓库实际代码与配置，撰写或重塑结构清晰、命令可复现且含 Hero 头部与规范徽标的开源项目 README（若属 chius-cc 仓库可套用个人预设）。"

@@ -33,7 +33,7 @@ description: >-
 
 ## 新建或统一 CITY 网站的工作流
 
-1. **核对项目角色与原型**：确认新站属于 **原型 A（全屏画布/地图/网络）** 还是 **原型 B（工作室/索引/工具流）**，确定唯一 `CitySiteId`、子域名 `<slug>.city.chius.dev` 与 GitHub 仓库 `chius-n/<repo>`。
+1. **核对项目角色与原型**：确认新站属于 **原型 A（全屏画布/地图/网络）** 还是 **原型 B（工作室/索引/工具流）**，确定唯一 `CitySiteId`、子域名 `<slug>.city.chius.dev` 与 GitHub 仓库 `chius-cc/<repo>`。
 2. **接入与同步 `city-shell`**：
    - 将新站条目注册进 `CITY_SITES`（`src/components/city-shell/ecosystem.ts`）；
    - 将最新一致的 `city-shell.css` 与 `src/components/city-shell/*` 同步到新站与姊妹站（如 `city-social-map`、`city-avatar`），保持共享文件逐字节相同；

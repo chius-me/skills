@@ -1,6 +1,6 @@
 # Shields.io 徽标规范与速查表
 
-为保持风格统一，所有徽标一律遵循以下格式约定。使用时将 `{owner}` 与 `{repo}` 替换为目标仓库的 GitHub 所有者与仓库名（`chius-n` 预设见 [chius-profile.md](chius-profile.md)）。
+为保持风格统一，所有徽标一律遵循以下格式约定。使用时将 `{owner}` 与 `{repo}` 替换为目标仓库的 GitHub 所有者与仓库名（`chius-cc` 预设见 [chius-profile.md](chius-profile.md)）。
 
 ---
 

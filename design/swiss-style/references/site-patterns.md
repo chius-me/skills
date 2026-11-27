@@ -46,7 +46,7 @@
 - **首屏构成**：圆头像 `8rem × 8rem`（显式声明 `width="128" height="128"`、配 `2x srcset` 与 `fetchpriority="high"`） → 粗体紧字距站名（`700` 字重，`letter-spacing: -.055em`，桌面约 `3.05rem`、窄屏 `2rem`）及可选 `--mark` 句点。
 - **等宽按钮栈**：每行宽 `18.75rem`（`300px`，`max-width: 100%`）、最小高 `3rem`（`48px`）、间距 `1rem`。文字 `500` 字重，配 `1.25rem` 单色 SVG 图标（`alt="" aria-hidden="true"`，通过滤镜或 `currentColor` 统一墨色，不混用五彩平台底色）；`1px` 边框、`4px` 圆角与极轻内高光。悬停在 `0.18s` 内切为 `--bg` 纸底与 `--accent` 边框及文字，**零位移**（`transform: none`）。
 - **页脚与纸纹**：页脚宽 `18.75rem`，以 `1px solid var(--line)` 顶线分隔，字号 `.8rem`。短页可用固定 SVG 细噪点营造纸感（`position: fixed; inset: 0; opacity: .045; pointer-events: none`）。若接入第三方悬浮挂件，需预留 `env(safe-area-inset-*)` 安全边距并提供 `<noscript>` 纯文本链接兜底。
-- **参考出处**：[线上页面](https://chius.me/) · [纸色与交互 CSS](https://github.com/chius-n/chius.me/blob/b575efa472afb582290e21cf7805ff14a6b6758e/public/css/paper.css) · [容器与基础尺度](https://github.com/chius-n/chius.me/blob/b575efa472afb582290e21cf7805ff14a6b6758e/public/css/style.css)
+- **参考出处**：[线上页面](https://chius.me/) · [纸色与交互 CSS](https://github.com/chius-cc/chius.me/blob/b575efa472afb582290e21cf7805ff14a6b6758e/public/css/paper.css) · [容器与基础尺度](https://github.com/chius-cc/chius.me/blob/b575efa472afb582290e21cf7805ff14a6b6758e/public/css/style.css)
 
 ### 2. 博客首页与文章索引（参考预设：`chius.cc` / `Chipaper`）
 
@@ -60,7 +60,7 @@
 - **正文与富媒体排版**：正文 `.prose` 字号 `1.025rem`（窄屏 `1rem`）、行高 `2`、`line-break: strict`；`h2` `1.4rem`、`h3` `1.15rem`、`h4` `1rem`，标题悬停或聚焦时浮现低透明度 `#` 锚点。列表项目符号与引文左侧 `3px` 竖线均用 `--mark` 色。正文图片块级居中并带 `1px solid var(--line)` 细框与 `3px` 圆角，配居中 `.8rem` 次级灰图注。
 - **代码与宽表格隔离**：内联代码用 `--soft` 底、`1px` 边与 `.85em` 字号；独立代码块置于 `--code-bg` 与 `1px` 描边容器内，顶部设 `2.2rem` 高工具栏显示语言名与带 `aria-live="polite"` 的复制按钮，`pre` 设 `overflow-x: auto` 与 `tabindex="0"`。宽表格外包 `.table-scroll`（`overflow-x: auto`、`tabindex="0"`、`role="region"`），表头用 `--soft` 底色，严禁撑出视口横向滚动条。
 - **文末收束**：居中 `.8rem` 完结标记配 `--mark` 句点 → `1px dashed var(--line)` 顶线分隔的双栏上下篇导航 → 可选评论区。
-- **参考出处**：[线上页面](https://chius.cc/) · [Chipaper 排版与双主题 CSS](https://github.com/chius-n/chipaper/blob/fdc1c03432268b9ce93590bb55af37a761b6a2ae/assets/css/paper.css) · [首页模板](https://github.com/chius-n/chipaper/blob/fdc1c03432268b9ce93590bb55af37a761b6a2ae/layouts/home.html) · [文章列表模板](https://github.com/chius-n/chipaper/blob/fdc1c03432268b9ce93590bb55af37a761b6a2ae/layouts/partials/paper/post-list.html)
+- **参考出处**：[线上页面](https://chius.cc/) · [Chipaper 排版与双主题 CSS](https://github.com/chius-cc/chipaper/blob/fdc1c03432268b9ce93590bb55af37a761b6a2ae/assets/css/paper.css) · [首页模板](https://github.com/chius-cc/chipaper/blob/fdc1c03432268b9ce93590bb55af37a761b6a2ae/layouts/home.html) · [文章列表模板](https://github.com/chius-cc/chipaper/blob/fdc1c03432268b9ce93590bb55af37a761b6a2ae/layouts/partials/paper/post-list.html)
 
 ### 4. 归档、标签与站内检索页
 
