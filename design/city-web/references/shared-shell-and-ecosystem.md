@@ -8,8 +8,8 @@
 
 | `CitySiteId` | `subtitle` | 线上域名 (`url`) | GitHub 原仓 (`repoSlug` / `repoUrl`) | 强调色 |
 | --- | --- | --- | --- | --- |
-| `'social-map'` | `SOCIAL MAP` | `https://social.city.chius.dev` | `chius-me/city-social-map` (`https://github.com/chius-me/city-social-map`) | `#f7b647` |
-| `'avatar'` | `AVATAR` | `https://avatar.city.chius.dev` | `chius-me/city-avatar` (`https://github.com/chius-me/city-avatar`) | `#f09cb4` |
+| `'social-map'` | `SOCIAL MAP` | `https://social.city.chius.dev` | `chius-n/city-social-map` (`https://github.com/chius-n/city-social-map`) | `#f7b647` |
+| `'avatar'` | `AVATAR` | `https://avatar.city.chius.dev` | `chius-n/city-avatar` (`https://github.com/chius-n/city-avatar`) | `#f09cb4` |
 
 ### 注册第 3 个及更多新站的规范步骤
 
@@ -87,5 +87,5 @@
 ### 4. 中英双语 README 互链约定
 
 配合 `readme-spec` skill 生成 `README.md` 与 `README.zh.md` 时：
-- 标题下方快捷链接行必须包含本站在线域名、主要姊妹站链接（如 `[CITY Social Map](https://social.city.chius.dev)` / `[CITY Avatar](https://avatar.city.chius.dev)`）、Issues 与 `[Awesome CITY](https://github.com/chius-me/awesome-citytheanimation)`；
+- 标题下方快捷链接行必须包含本站在线域名、主要姊妹站链接（如 `[CITY Social Map](https://social.city.chius.dev)` / `[CITY Avatar](https://avatar.city.chius.dev)`）、Issues 与 `[Awesome CITY](https://github.com/chius-n/awesome-citytheanimation)`；
 - `Credits & Sources` / `参考与致谢` 小节单独设一行 `- **Sister Project(s)**` 列出姊妹项目的 GitHub 仓库与线上域名。

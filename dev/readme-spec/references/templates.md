@@ -1,6 +1,6 @@
 # 开源项目 README 参考模板库
 
-这里收录四大典型项目类型的标准 Markdown 模板源码，可直接复制后替换 `{owner}`、`{repo}`、`{author}` 等占位符使用。若为 `chius-me` 账号下仓库，占位符默认值见 [chius-profile.md](chius-profile.md)。
+这里收录四大典型项目类型的标准 Markdown 模板源码，可直接复制后替换 `{owner}`、`{repo}`、`{author}` 等占位符使用。若为 `chius-n` 账号下仓库，占位符默认值见 [chius-profile.md](chius-profile.md)。
 
 > 注意：主文档为英文时，章节标题和正文应全部保持纯英文（对应的 `README.zh.md` 再用纯中文）；避免在同一个文件中中英括号混写。
 

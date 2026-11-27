@@ -2,7 +2,7 @@
 name: readme-spec
 description: >-
   规范化并撰写高质量开源项目 README，包括门面结构设计、双语切换导航、Shields.io 徽标排版、
-  核心特性提炼与可复现的快速开始指引。内置可选的 chius-me 个人配置预设。
+  核心特性提炼与可复现的快速开始指引。内置可选的 chius-n 个人配置预设。
   Use when creating, standardizing, or refactoring open-source repository READMEs
   (with Hero header, badges, quick-start commands, and bilingual navigation).
 ---
@@ -15,7 +15,7 @@ description: >-
 
 - 四大项目类型模板：[参考模板库](references/templates.md)
 - 徽标参数与公式：[Shields 徽标规范](references/badges.md)
-- 所属 `chius-me` 仓库时读取：[Chius 个人预设](references/chius-profile.md)
+- 所属 `chius-n` 仓库时读取：[Chius 个人预设](references/chius-profile.md)
 
 ## 1. 核心原则
 

@@ -74,7 +74,7 @@
 ## 安装
 
 ```bash
-git clone https://github.com/chius-me/grok-collage-broll.git ~/.grok/skills/grok-collage-broll
+git clone https://github.com/chius-n/grok-collage-broll.git ~/.grok/skills/grok-collage-broll
 # 需要 ffmpeg：brew install ffmpeg
 bash ~/.grok/skills/grok-collage-broll/scripts/check_setup.sh
 ```
